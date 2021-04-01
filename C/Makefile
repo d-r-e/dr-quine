@@ -1,8 +1,8 @@
 NAME = drquine
 
-SRC = main.c
+SRC = Colleen.c
 
-OBJ = main.o
+OBJ = Colleen.o
 
 
 $(NAME): $(OBJ)
@@ -30,4 +30,4 @@ push: fclean
 	git push
 
 diff: $(NAME)
-	./$(NAME) > out; diff out main.c
+	./$(NAME) > out; diff out Colleen.c
