@@ -1,4 +1,4 @@
-NAME = drquine
+NAME = Colleen
 
 SRC = Colleen.c
 
@@ -31,3 +31,4 @@ push: fclean
 
 diff: $(NAME)
 	./$(NAME) > out; diff out Colleen.c
+	@rm -f out
