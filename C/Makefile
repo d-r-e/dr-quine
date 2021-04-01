@@ -28,3 +28,6 @@ push: fclean
 	git add $(SRC) Makefile
 	git commit -m "d-r-e"
 	git push
+
+diff: $(NAME)
+	./$(NAME) > out; diff out main.c
