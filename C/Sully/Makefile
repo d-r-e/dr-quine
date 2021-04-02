@@ -23,7 +23,7 @@ fclean: clean
 	rm -f $(NAME)
 	rm -f $(COPIES)
 
-x: $(NAME)
+x: fclean $(NAME)
 	@./$(NAME)
 
 push: fclean
