@@ -31,6 +31,6 @@ push: fclean
 	git push
 
 diff: $(NAME)
-	./$(NAME) > out; diff out $(NAME).c
+	./$(NAME); diff Grace_kid.c $(NAME).c
 	@rm -f out
 	@rm -f $(OBJ)
