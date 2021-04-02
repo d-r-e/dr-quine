@@ -10,7 +10,7 @@ int main(){
 	sprintf(filename, "Sully_%d.c", i);
 	int f = open(filename, O_CREAT|O_TRUNC|O_WRONLY, 655);
 	dprintf(f,quine,10,10,10,10,10,9,i-1,10,9,10,9,34,quine,34,10,10,9,34,34,10,9,10,9,10,9,34,34,10,9,34,34,10,9,10,10);
-	sprintf(compile, "gcc Sully_%d.c -o Sully_%d",i,i);
-	if (i > 0){system(compile); sprintf(compile, "./Sully_%d", i);system(compile);}
+	sprintf(compile,"gcc Sully_%d.c -o Sully_%d",i,i);
+	if (i > 0){system(compile); sprintf(compile,"./Sully_%d", i);system(compile);}
 	close(f);
 }
