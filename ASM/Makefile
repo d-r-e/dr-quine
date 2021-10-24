@@ -4,7 +4,7 @@ SULLY	:= Sully
 NASM	:= nasm
 FLAGS	:= -f macho64
 LD		:= ld
-LDFLAGS	:= -macosx_version_min 10.8 -lSystem
+LDFLAGS	:= -macosx_version_min 10.8 -lSystem -no_pie
 SRCC := Colleen.s
 OBJC := Colleen.o
 SRCG := Grace.s
@@ -12,8 +12,9 @@ OBJG := Grace.o
 SRCS := Sully.s
 OBJS := Sully.o
 
-OBJ = $(OBJC) $(OBJS) $(OBJG)
 NAME = $(COLLEEN) $(GRACE) $(SULLY)
+
+OBJ = $(OBJC) $(OBJS) $(OBJG)
 
 
 all: $(COLLEEN) $(GRACE)
@@ -32,6 +33,7 @@ $(SULLY): $(OBJS)
 
 clean:
 	rm -f $(OBJ)
+	rm -f Grace_kid.s
 
 fclean: clean
 	rm -f $(NAME)
