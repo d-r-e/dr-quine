@@ -3,7 +3,6 @@ GRACE	:= Grace
 SULLY	:= Sully
 NASM	:= nasm
 FLAGS	:= -f macho64
-LD		:= ld
 LDFLAGS	:= -macosx_version_min 10.8 -lSystem -no_pie
 SRCC := Colleen.s
 OBJC := Colleen.o
@@ -16,17 +15,14 @@ NAME = $(COLLEEN) $(GRACE) $(SULLY)
 
 OBJ = $(OBJC) $(OBJS) $(OBJG)
 
-
 all: $(COLLEEN) $(GRACE)
 
 $(COLLEEN): $(OBJC)
-	$(LD) $(LDFLAGS) $(OBJC) -o $@
-
+	ld $(LDFLAGS) $(OBJC) -o $@
 $(GRACE): $(OBJG)
-	$(LD) $(LDFLAGS) $(OBJG) -o $@
-
+	ld $(LDFLAGS) $(OBJG) -o $@
 $(SULLY): $(OBJS)
-	$(LD) $(LDFLAGS) $(OBJS) -o $@
+	ld $(LDFLAGS) $(OBJS) -o $@
 
 %.o: %.s
 	$(NASM) $(FLAGS) $< -o $@
