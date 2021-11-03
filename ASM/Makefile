@@ -30,6 +30,7 @@ $(SULLY): $(OBJS)
 clean:
 	rm -f $(OBJ)
 	rm -f Grace_kid.s
+	rm -f Sully_*
 
 fclean: clean
 	rm -f $(NAME)
